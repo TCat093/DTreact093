@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../base/react.min.js"></script>
+    <script src="../base/react-dom.min.js"></script>
+    <script src="../base/browser.min.js"></script>
+    
+    <title>Document</title>
+    <style>
+        .red{
+            height: 100px;
+            width: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+   <div id="app">
+
+   </div>
+   <script type="text/babel">
+        let Hehe = React.createClass({
+            show:false,
+            getInitialState(){
+                console.log('start')
+                return{
+                    show:true
+                         }
+                    },
+            toggle(){
+                this.setState({show:!this.state.show})
+                console.log(this.state.show)
+                    },
+            render(){
+                
+                let {state}=this
+                console.log('x',this)
+                return(
+                    <div>
+                        {!state.show||<div className='red'></div>}
+                        <button onClick={this.toggle}>on</button>
+                    </div>
+                    
+                )
+            }
+        })
+
+        ReactDOM.render(<Hehe/>,app)
+   </script> 
+</body>
+</html>

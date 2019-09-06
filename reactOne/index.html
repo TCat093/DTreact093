@@ -4,29 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="../base/react.min.js"></script>
     <script src="../base/browser.min.js"></script>
     <script src="../base/react-dom.min.js"></script>
-    <script src="../base/react.min.js"></script>
+    
     <title>hi</title>
     
 
 </head>
+<style>
+    .red{
+        background: red;
+        height:100px;
+    }
+</style>
 <body>
     <div id="app">
 
     </div>
     <script type="text/babel">  
-        let Cat = React.createClass({
-            render(){
-                return(
-                    <div>hello word</div>
-                    )
-                    
-                
-            }
+       let Demos = React.createClass({
+           name:'jack',
+           show:false,
+           list:['hehe','haha','xixi'],
+           color:'red',
+           render(){
+               return(
+                   <div>
+                   <p className='red'>{this.name}</p>
+                    {this.show?<span className="red">youxi</span>:''}
 
-        })
-        ReactDOM.render(<Cat/>,app)
+                    <ul>
+                        <li>1</li>
+                        {this.list.map((item)=>{
+                            return <li>{item}</li>
+                        })}
+                    </ul>
+                    <div className={this.color}></div>
+
+                   </div>
+                   
+
+               )
+           }
+       }) 
+
+       ReactDOM.render(<Demos/>,app)
     </script>
 </body>
 </html>

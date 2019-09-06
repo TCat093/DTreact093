@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../base/react.min.js"></script>
+    <script src="../base/react-dom.min.js"></script>
+    <script src="../base/browser.min.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+   <div id="app">
+
+   </div>
+   <script type="text/babel">
+        let Father = React.createClass({
+            render(){
+                return(
+                    <div>
+                        <Son><Son/>
+                    </div>
+                )
+            }
+        })
+        let Son = React.createClass({
+            render(){
+                return(
+                    <div>
+                    
+                    </div>
+                )
+            }
+        })
+
+        ReactDOM.render(<Father/>,app)
+   </script> 
+</body>
+</html>
